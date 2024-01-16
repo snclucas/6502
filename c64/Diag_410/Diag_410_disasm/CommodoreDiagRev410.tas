@@ -1,0 +1,3521 @@
+; diagnostic 4.1.0 disassembly
+;
+; this diag copies code down to $1000 and
+; has crossreferences between $1000/$8000.
+;
+; worldofjani.com
+;
+; **** ZP ABSOLUTE ADRESSES **** 
+;
+A00 = $00
+A01 = $01
+A02 = $02
+A03 = $03
+A04 = $04
+A05 = $05
+A06 = $06
+A08 = $08
+A09 = $09
+A0A = $0A
+A0B = $0B
+A0C = $0C
+A0D = $0D
+A0E = $0E
+A0F = $0F
+A10 = $10
+A11 = $11
+A12 = $12
+A13 = $13
+A14 = $14
+A15 = $15
+A16 = $16
+A17 = $17
+A18 = $18
+A19 = $19
+A1A = $1A
+A1B = $1B
+A1C = $1C
+A1D = $1D
+A1E = $1E
+A1F = $1F
+A20 = $20
+A21 = $21
+A22 = $22
+A23 = $23
+A24 = $24
+A25 = $25
+A26 = $26
+A27 = $27
+A28 = $28
+A29 = $29
+A2A = $2A
+;
+; **** ZP POINTERS **** 
+;
+P04 = $04
+P0F = $0F
+P23 = $23
+P25 = $25
+;
+; **** FIELDS **** 
+;
+F0000 = $0000
+F0100 = $0100
+F0104 = $0104
+F0300 = $0300
+F0400 = $0400
+F0409 = $0409
+F0454 = $0454
+F047C = $047C
+F04A4 = $04A4
+F04CC = $04CC
+F04F4 = $04F4
+F0500 = $0500
+F0544 = $0544
+F056C = $056C
+F05BC = $05BC
+F05E4 = $05E4
+F0600 = $0600
+F060C = $060C
+F065C = $065C
+F0684 = $0684
+F06AC = $06AC
+F06D4 = $06D4
+F06FC = $06FC
+F0700 = $0700
+F07D7 = $07D7
+F07F8 = $07F8
+F0800 = $0800
+
+
+F4800 = $4800
+F5FF8 = $5FF8
+FD000 = $D000
+FD400 = $D400
+FD800 = $D800
+FD900 = $D900
+FD97A = $D97A
+FDA00 = $DA00
+FDB00 = $DB00
+FDC08 = $DC08
+FDD08 = $DD08
+;
+; **** ABSOLUTE ADRESSES **** 
+;
+A0200 = $0200
+A0201 = $0201
+A0314 = $0314
+A0315 = $0315
+A0318 = $0318
+A0319 = $0319
+A0462 = $0462
+A0463 = $0463
+A0469 = $0469
+A046A = $046A
+A046B = $046B
+A046C = $046C
+A046E = $046E
+A046F = $046F
+A0470 = $0470
+A0471 = $0471
+A0472 = $0472
+A048A = $048A
+A048B = $048B
+A048E = $048E
+A0491 = $0491
+A0492 = $0492
+A0493 = $0493
+A0494 = $0494
+A0496 = $0496
+A0497 = $0497
+A0498 = $0498
+A0499 = $0499
+A049A = $049A
+A04B2 = $04B2
+A04B3 = $04B3
+A04B9 = $04B9
+A04BA = $04BA
+A04BB = $04BB
+A04BC = $04BC
+A04BE = $04BE
+A04BF = $04BF
+A04C0 = $04C0
+A04C1 = $04C1
+A04C2 = $04C2
+A04DA = $04DA
+A04DB = $04DB
+A04E1 = $04E1
+A04E2 = $04E2
+A04E3 = $04E3
+A04E4 = $04E4
+A04E6 = $04E6
+A04E7 = $04E7
+A04E8 = $04E8
+A04E9 = $04E9
+A04EA = $04EA
+A0502 = $0502
+A0503 = $0503
+A0506 = $0506
+A0552 = $0552
+A0553 = $0553
+A0556 = $0556
+A057A = $057A
+A057B = $057B
+A057E = $057E
+A0580 = $0580
+A0581 = $0581
+A0582 = $0582
+A0583 = $0583
+A0584 = $0584
+A0585 = $0585
+A0586 = $0586
+A05CA = $05CA
+A05CB = $05CB
+A05CD = $05CD
+A05CE = $05CE
+A05CF = $05CF
+A05D0 = $05D0
+A05D1 = $05D1
+A05D2 = $05D2
+A05D3 = $05D3
+A05D4 = $05D4
+A05D5 = $05D5
+A05D6 = $05D6
+A05D7 = $05D7
+A05D8 = $05D8
+A05D9 = $05D9
+A05DA = $05DA
+A05DB = $05DB
+A05F2 = $05F2
+A05F3 = $05F3
+A05F6 = $05F6
+A061A = $061A
+A061B = $061B
+A061E = $061E
+A0620 = $0620
+A0621 = $0621
+A0622 = $0622
+A066A = $066A
+A066B = $066B
+A0692 = $0692
+A0693 = $0693
+A06BA = $06BA
+A06BB = $06BB
+A06E2 = $06E2
+A06E3 = $06E3
+A070A = $070A
+A070B = $070B
+A070E = $070E
+A0710 = $0710
+A075F = $075F
+A0760 = $0760
+A0761 = $0761
+A0762 = $0762
+A0763 = $0763
+A0764 = $0764
+A0765 = $0765
+A0766 = $0766
+A0767 = $0767
+A0768 = $0768
+A0787 = $0787
+A0788 = $0788
+A0789 = $0789
+A078A = $078A
+A078B = $078B
+A078C = $078C
+A078D = $078D
+A078E = $078E
+A078F = $078F
+A0790 = $0790
+A07DD = $07DD
+A07DE = $07DE
+A07DF = $07DF
+A07E0 = $07E0
+AD001 = $D001
+AD002 = $D002
+AD003 = $D003
+AD004 = $D004
+AD005 = $D005
+AD006 = $D006
+AD007 = $D007
+AD008 = $D008
+AD009 = $D009
+AD00A = $D00A
+AD00B = $D00B
+AD00C = $D00C
+AD00D = $D00D
+AD00E = $D00E
+AD00F = $D00F
+AD010 = $D010
+AD011 = $D011
+AD015 = $D015
+AD016 = $D016
+AD018 = $D018
+AD01B = $D01B
+AD020 = $D020
+AD021 = $D021
+AD401 = $D401
+AD402 = $D402
+AD403 = $D403
+AD404 = $D404
+AD405 = $D405
+AD406 = $D406
+AD407 = $D407
+AD408 = $D408
+AD409 = $D409
+AD40A = $D40A
+AD40B = $D40B
+AD40C = $D40C
+AD40D = $D40D
+AD40E = $D40E
+AD40F = $D40F
+AD410 = $D410
+AD411 = $D411
+AD412 = $D412
+AD413 = $D413
+AD414 = $D414
+AD415 = $D415
+AD416 = $D416
+AD417 = $D417
+AD418 = $D418
+AD419 = $D419
+AD41A = $D41A
+AD41B = $D41B
+AD862 = $D862
+AD863 = $D863
+AD88A = $D88A
+AD88B = $D88B
+AD8B2 = $D8B2
+AD8B3 = $D8B3
+AD8DA = $D8DA
+AD8DB = $D8DB
+AD902 = $D902
+AD903 = $D903
+AD952 = $D952
+AD953 = $D953
+AD97B = $D97B
+AD9CA = $D9CA
+AD9CB = $D9CB
+AD9F2 = $D9F2
+AD9F3 = $D9F3
+ADA1A = $DA1A
+ADA1B = $DA1B
+ADB0A = $DB0A
+ADB0B = $DB0B
+ADC00 = $DC00
+ADC01 = $DC01
+ADC02 = $DC02
+ADC03 = $DC03
+ADC04 = $DC04
+ADC05 = $DC05
+ADC06 = $DC06
+ADC07 = $DC07
+ADC09 = $DC09
+ADC0A = $DC0A
+ADC0B = $DC0B
+ADC0C = $DC0C
+ADC0D = $DC0D
+ADC0E = $DC0E
+ADC0F = $DC0F
+ADD00 = $DD00
+ADD01 = $DD01
+ADD02 = $DD02
+ADD03 = $DD03
+ADD04 = $DD04
+ADD05 = $DD05
+ADD06 = $DD06
+ADD07 = $DD07
+ADD09 = $DD09
+ADD0A = $DD0A
+ADD0B = $DD0B
+ADD0D = $DD0D
+ADD0E = $DD0E
+ADD0F = $DD0F
+AFF80 = $FF80
+AFFA9 = $FFA9
+;
+; **** POINTERS **** 
+;
+P0008 = $0008
+;
+; **** EXTERNAL JUMPS **** 
+;
+
+;-----------------------------------------------------------
+        * = $8000
+cartstart
+
+        .word I8009
+        .word I8009
+        .text "CBM80"        
+
+I8009   SEI 
+        LDX #$FF
+        TXS 
+        CLD 
+        LDA #$E7
+        STA A01
+        LDA #$37
+        STA A00
+        LDX #$01
+        STX A02
+        DEX 
+        STX A03
+        LDX #$03
+I801F   LDA F994E,X
+        STA FDC08,X
+        LDA F9952,X
+        STA FDD08,X
+        DEX 
+        BPL I801F
+I802E   LDA #$7F
+        STA ADC0D
+        STA ADD0D
+        STA ADC00
+        LDA #$08
+        STA ADC0F
+        STA ADD0F
+        LDA #$C8
+        STA ADC0E
+        LDA #$88
+        STA ADD0E
+        LDA #$03
+        STA ADD00
+        LDY #$00
+        STY ADC03
+        DEY 
+        STY ADC02
+        LDA #$3B
+        STA ADD02
+        LDA #$0F
+        STA ADD03
+        LDX #$18
+        LDA #$00
+I8067   STA FD400,X
+        DEX 
+        BPL I8067
+        LDX #$00
+I806F   LDA #$20
+        STA F0400,X
+        STA F0500,X
+        STA F0600,X
+        STA F0700,X
+        LDA #$06
+        STA FD800,X
+        STA FD900,X
+        STA FDA00,X
+        STA FDB00,X
+        INX 
+        BNE I806F
+        
+        LDX #$18
+I8090   LDA F995A,X        ;"c-64 diagnostic rev 4.1.0"
+        STA F0409,X
+        DEX 
+        BPL I8090
+        LDX #$04
+I809B   LDA F9973,X        ;"count"
+        STA F07D7,X
+        DEX 
+        BPL I809B
+        LDA A02
+        AND #$0F
+        ORA #$30
+        STA A07E0
+        LDA A02
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        ORA #$30
+        STA A07DF
+        LDA A03
+        AND #$0F
+        ORA #$30
+        STA A07DE
+        LDA A03
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        ORA #$30
+        STA A07DD
+        LDX #$2E
+I80D2   LDA F991F,X
+        STA FD000,X
+        DEX 
+        BPL I80D2
+        LDA A02
+        STA A0200
+        LDA A03
+        STA A0201
+
+        LDX #$09            ;test zeropage memory
+I80E7   LDA F9978,X         ;"zero page"
+        STA F0454,X
+        DEX 
+        BPL I80E7
+        LDX #$03
+I80F2   LDA F9956,X         ;memory testpattern
+        LDY #$02
+I80F7   STA F0000,Y
+        INY 
+        BNE I80F7
+        LDY #$02
+I80FF   CMP F0000,Y
+        BNE I8147
+        INY 
+        BNE I80FF
+        DEX 
+        BPL I80F2
+        LDY #$02
+I810C   LDA #$80
+I810E   STA F0000,Y
+        CMP F0000,Y
+        BNE I8147
+        LSR 
+        BNE I810E
+        INY 
+        BNE I810C
+        LDY #$02
+I811E   TYA 
+        STA F0000,Y
+        INY 
+        BNE I811E
+        LDY #$02
+I8127   TYA 
+        CMP F0000,Y
+        BNE I8147
+        INY 
+        BNE I8127
+        LDA A0200
+        STA A02
+        LDA A0201
+        STA A03
+        LDA #$0F            ;"o"
+        STA A0462           ;zero page status
+        LDA #$0B            ;"k"
+        STA A0463
+        JMP I814A
+
+I8147   JMP I94F7           ;zeropage memory error
+
+I814A   LDX #$09            ;test stack memory
+I814C   LDA F9982,X
+        STA F047C,X
+        DEX 
+        BPL I814C
+        LDX #$03
+I8157   LDY #$00
+        LDA F9956,X         ;memory testpattern
+I815C   STA F0100,Y
+        INY 
+        BNE I815C
+I8162   CMP F0100,Y
+        BNE I819E
+        INY 
+        BNE I8162
+        DEX 
+        BPL I8157
+        LDY #$00
+I816F   LDA #$80
+I8171   STA F0100,Y
+        CMP F0100,Y
+        BNE I819E
+        LSR 
+        BNE I8171
+        INY 
+        BNE I816F
+        LDY #$00
+I8181   TYA 
+        STA F0100,Y
+        INY 
+        BNE I8181
+I8188   TYA 
+        CMP F0100,Y
+        BNE I819E
+        INY 
+        BNE I8188
+        LDA #$0F            ;"o"
+        STA A048A           ;stack page status
+        LDA #$0B            ;"k"
+        STA A048B
+        JMP I81A1
+
+I819E   JMP I9572           ;stack page memory error
+
+
+I81A1   JSR I8218           ;ram test
+        JSR I932D           ;update timer AM
+        LDA #$00
+        STA A04
+        STA A0F
+        LDA #>$8000
+        STA A05
+        LDA #>$1000         ;copy code to $1000-
+        STA A10
+        LDX #$20
+I81B7   LDY #$00
+I81B9   LDA (P04),Y
+        STA (P0F),Y
+        INY 
+        BNE I81B9
+        INC A05
+        INC A10
+        DEX 
+        BNE I81B7
+        JMP I81CA
+
+I81CA   JSR E1334           ;=$8334
+        JSR E1253           ;=$8253
+        JMP I81D3
+
+I81D3   JSR I932D           ;update timer AM
+        JSR I83EF           ;color ram test
+        JSR I843B           ;rom check test
+        JSR I84AD           ;casette test
+        JSR I8529           ;key port test
+        JSR I85DE           ;control port test
+        JSR I86E1           ;serial port test
+        JSR I8772           ;user port test
+        JSR I88A0           ;timer 1 a test
+        JSR I88E0           ;timer 1 b test
+        JSR I8920           ;timer 2 a test
+        JSR I8960           ;timer 2 b test
+        JSR I8AAA           ;interrupt test
+        JSR I8DB6
+        JSR I8FB7
+        JSR I913E
+        JSR I9299           ;sound test
+        SED 
+        CLC 
+        LDA A02
+        ADC #$01
+        STA A02
+        LDA A03
+        ADC #$00
+        STA A03
+        CLD 
+        JMP I802E
+
+I8218   LDX #$08
+I821A   LDA F9994,X         ;"ram test1"
+        STA F04CC,X
+        DEX 
+        BPL I821A
+        LDA #>$0200
+        STA A05
+        LDA #<$0200
+        STA A04
+        LDA #$7E
+        STA A06
+        LDA #<I95EF
+        STA A08
+        LDA #>I95EF
+        STA A09
+        JSR I828E
+        JSR I9414
+        LDX #$08
+I823F   LDA F9994,X         ;"ram test1"
+        STA F0454,X
+        DEX 
+        BPL I823F
+        LDA #$0F            ;"o"
+        STA A0462           ;ram test 1 status
+        LDA #$0B            ;"k"
+        STA A0463
+        RTS 
+
+;----------------------------------------- 
+.logical (*-cartstart+$1000)
+E1253   LDX #$08
+I1255   LDA F299D,X         ;ram test 2
+        STA F04A4,X
+        DEX 
+        BPL I1255
+        LDA A01
+        AND #$F8
+        ORA #$04
+        STA A01
+        LDA #>$8000
+        STA A05
+        LDA #<$8000
+        STA A04
+        LDA #$80
+        STA A06
+        LDA #<E2672
+        STA A08
+        LDA #>E2672
+        STA A09
+        JSR E128E           ;= $828e
+        LDA A01
+        ORA #$07
+        STA A01
+        LDA #$0F            ;"o"
+        STA A04B2           ;ram test 2 status
+        LDA #$0B            ;"k"
+        STA A04B3
+        RTS 
+
+E128E                       ;called as $128e
+.here
+;----------------------------------------- 
+I828E   LDA A04             ;called as $828e
+        STA A0F
+        LDA A05
+        STA A10
+        LDX A06
+        LDY #$00
+I829A   TYA 
+        CLC 
+        ADC A10
+        STA (P0F),Y
+        INY 
+        BNE I829A
+        INC A10
+        DEX 
+        BNE I829A
+        LDA A04
+        STA A0F
+        LDA A05
+        STA A10
+        LDX A06
+        LDY #$00
+I82B4   TYA 
+        CLC 
+        ADC A10
+        CMP (P0F),Y
+        BNE I8331
+        INY 
+        BNE I82B4
+        INC A10
+        DEX 
+        BNE I82B4
+        LDA #$00
+        STA A11
+        LDA A04
+        STA A0F
+        LDA A05
+        STA A10
+        LDX A06
+        LDY #$00
+        LDA A11
+I82D6   STA (P0F),Y
+        INY 
+        BNE I82D6
+        INC A10
+        DEX 
+        BNE I82D6
+        LDA A11
+        STA A14
+        CLC 
+        LDA A11
+        ADC #$55
+        STA A11
+I82EB   LDA A04
+        STA A0F
+        LDA A05
+        STA A10
+        LDX A06
+        LDY #$00
+I82F7   LDA A14
+        CMP (P0F),Y
+        BNE I8331
+        LDA A11
+        STA (P0F),Y
+        INY 
+        BNE I82F7
+        INC A10
+        DEX 
+        BNE I82F7
+        LDA A11
+        STA A14
+        CLC 
+        LDA A11
+        ADC #$55
+        STA A11
+        BCC I82EB
+        LDA A04
+        STA A0F
+        LDA A05
+        STA A10
+        LDX A06
+        LDY #$00
+        LDA A14
+I8324   CMP (P0F),Y
+        BNE I8331
+        INY 
+        BNE I8324
+        INC A10
+        DEX 
+        BNE I8324
+        RTS 
+
+I8331   JMP (P0008)     ;memtest error
+
+;----------------------------------------- code below is exec at $1334
+.logical (*-cartstart+$1000)
+
+E1334   LDX #$07
+I1336   LDA F298C,X         ;pla test
+        STA F047C,X
+        DEX 
+        BPL I1336
+        LDA #$31
+        STA A0A
+        LDA A01
+        AND #$F8
+        ORA #$06
+        STA A01
+        LDA #$00
+        STA A04
+        LDA #$A0
+        STA A05
+        JSR E13C4
+        INC A0A
+        LDA A01
+        ORA #$07
+        STA A01
+        LDX #$00
+        JSR E13D9
+        INC A0A
+        LDA A01
+        AND #$F8
+        ORA #$05
+        STA A01
+        LDA #$00
+        STA A04
+        LDA #$E0
+        STA A05
+        JSR E13C4
+        INC A0A
+        LDA A01
+        ORA #$07
+        STA A01
+        LDX #$01
+        JSR E13D9
+        INC A0A
+        LDA A01
+        AND #$F8
+        ORA #$03
+        STA A01
+        LDA #$00
+        STA A04
+        LDA #$D0
+        STA A05
+        LDX #$02
+        JSR E13D9
+        INC A0A
+        LDA A01
+        ORA #$07
+        STA A01
+        LDA FD800
+        TAY 
+        LDA #$02
+        STA FD800
+        LDA FD800
+        AND #$0F
+        CMP #$02
+        STY FD800
+        BNE I13E3
+        LDA #$0F            ;"o"
+        STA A048A           ;pla test status
+        LDA #$0B            ;"k"
+        STA A048B
+        RTS 
+
+E13C4   LDA #$55
+        LDY #$05
+I13C8   STA (P04),Y
+        DEY 
+        BNE I13C8
+        LDY #$05
+I13CF   LDA (P04),Y
+        CMP #$55
+        BNE I13E3
+        DEY 
+        BNE I13CF
+        RTS 
+
+E13D9   LDY #$00
+        LDA (P04),Y
+        CMP F13EC,X
+        BNE I13E3
+        RTS 
+
+I13E3   LDA A01
+        ORA #$07
+        STA A01
+        JMP E26C1
+
+F13EC   .BYTE $94,$85,$3C
+.here
+
+;-----------------------------------------------------------
+        
+I83EF   LDX #$08            ;color ram test
+I83F1   LDA F99A6,X         ;"color ram"
+        STA F04CC,X
+        DEX 
+        BPL I83F1
+        LDA #$00
+        STA A04
+        LDA #$D8
+        STA A05
+        LDA #$03
+        STA A06
+I8406   LDY #$00
+I8408   LDA (P04),Y
+        STA A11
+        LDX #$0F
+I840E   TXA 
+        STA (P04),Y
+        PHA 
+        LDA (P04),Y
+        AND #$0F
+        STA A0B
+        PLA 
+        EOR A0B
+        BNE I8438
+        DEX 
+        BPL I840E
+        LDA A11
+        STA (P04),Y
+        INY 
+        BNE I8408
+        INC A05
+        DEC A06
+        BPL I8406
+        LDA #$0F            ;"o"
+        STA A04DA           ;color ram status
+        LDA #$0B            ;"k"
+        STA A04DB
+        RTS 
+
+I8438   JMP I96DB
+
+I843B   SEI                ;rom check test
+        LDX #$08
+I843E   LDA F99AF,X        ;"rom check"
+        STA F04F4,X
+        DEX 
+        BPL I843E
+        LDA A01
+        AND #$F8
+        ORA #$03
+        STA A01
+        LDX #$02
+I8451   LDA F84A4,X
+        STA A05
+        LDA F84AA,X
+        STA A0A
+        LDA #$00
+        STA A04
+        TAY 
+        CLC 
+I8461   ADC (P04),Y
+        INY 
+        BNE I8461
+        INC A05
+        DEC A0A
+        BNE I8461
+        ADC #$00
+        CPX #$01
+        BEQ I847D
+I8472   CMP F84A7,X
+        BNE I849B
+I8477   DEX 
+        BMI I848A
+        JMP I8451
+
+I847D   LDY AFF80           ;kernal revision
+        CPY #$00
+        BEQ I8472
+        CMP #$E0            ;rom checksum #$e0
+        BEQ I8477
+        BNE I849B
+I848A   LDA A01
+        ORA #$07
+        STA A01
+        LDA #$0F            ;"o"
+        STA A0502           ;rom check status
+        LDA #$0B            ;"k"
+        STA A0503
+        RTS 
+
+I849B   LDA A01
+        ORA #$07
+        STA A01
+        JMP E2720
+
+        
+
+F84A4   .BYTE $A0,$E0,$D0
+F84A7   .BYTE $A1,$E1,$F7
+F84AA   .BYTE $20,$20,$10
+
+I84AD   LDX #$06            ;casette test
+I84AF   LDA F99B8,X         ;"casette"
+        STA F0544,X
+        DEX 
+        BPL I84AF
+        LDA ADD00
+        AND #$DF
+        STA ADD00
+        LDX #$05
+        LDA ADC0D
+I84C5   LDA A01
+        ORA #$10
+        STA A01
+        AND #$EF
+        STA A01
+        ORA #$10
+        STA A01
+        LDA ADC0D
+        AND #$10
+        BEQ I850E
+        DEX 
+        BNE I84C5
+        LDA A01
+        ORA #$20
+        STA A01
+        JSR I8517
+        LDA A01
+        AND #$08
+        BNE I8511
+        LDA A01
+        AND #$DF
+        STA A01
+        JSR I8517
+        LDA A01
+        AND #$08
+        BEQ I8514
+        LDA A01
+        AND #$CF
+        ORA #$20
+        STA A01
+        LDA #$0F            ;"o"
+        STA A0552
+        LDA #$0B            ;"k"
+        STA A0553
+        RTS 
+
+I850E   JMP I973C
+
+I8511   JMP I9740
+
+I8514   JMP I9744
+
+I8517   PHA 
+        TXA 
+        PHA 
+        LDA #$00
+        TAX 
+        CLC 
+I851E   ADC #$01
+        BNE I851E
+        INX 
+        BNE I851E
+        PLA 
+        TAX 
+        PLA 
+        RTS 
+
+I8529   LDX #$07             ;key port test
+I852B   LDA F99BF,X          ;"key port"
+        STA F056C,X
+        DEX 
+        BPL I852B
+        LDA A01
+        ORA #$10
+        STA A01
+        LDX #$FF
+        STX ADC02
+        INX 
+        STX ADC03
+        LDA #$00
+        STA ADC00
+        NOP 
+        NOP 
+        NOP 
+        LDA ADC01
+        CMP #$FF
+        BEQ I85B5
+        LDY #$01
+        STY A0A
+I8556   LDX A0A
+        LDY F85B3,X
+        LDX #$00
+        STX ADC02
+        STX ADC03
+I8563   TXA 
+        STA ADC02,Y
+        EOR #$FF
+        STA ADC00,Y
+        CMP ADC00,Y
+        BNE I85AD           ;error
+        INX 
+        BNE I8563
+        DEC A0A
+        BPL I8556
+        LDX #$FF
+        STX ADC02
+        INX 
+        STX ADC03
+        STX ADC00
+        CPX ADC01
+        BNE I85B0           ;error
+        LDA #$FE
+        STA ADC00
+I858E   LDA ADC01
+        CMP ADC00
+        BNE I85B0           ;error
+        SEC 
+        ROL ADC00
+        BCS I858E
+        LDA A01
+        AND #$EF
+        STA A01
+        LDA #$0F            ;"o"
+        STA A057A
+        LDA #$0B            ;"k"
+        STA A057B
+        RTS 
+
+I85AD   JMP I975E           ;error
+
+I85B0   JMP I9789           ;error
+
+F85B3   .BYTE $01,$00
+
+I85B5   LDA A01
+        AND #$EF
+        STA A01
+        LDX #$11
+I85BD   LDA F85CC,X
+        STA A057A,X
+        LDA #$02
+        STA FD97A,X
+        DEX 
+        BPL I85BD
+        RTS 
+
+F85CC   .BYTE $03,$0F,$0E,$0E,$05,$03,$14,$05
+        .BYTE $04,$20,$0B,$05,$19,$02,$0F,$01
+        .BYTE $12
+        .BYTE $04
+        
+I85DE   LDX #$0B          ;control port test
+I85E0   LDA F99C7,X       ;"control port"
+        STA F05BC,X
+        DEX 
+        BPL I85E0
+        LDA #$40
+        STA ADC00
+        JSR I86D8
+        LDX #$00
+        JSR I8696
+        CPY #$00
+        BEQ I85FD
+        JMP I868D
+
+I85FD   STX A0B
+        STA A0C
+        LDA #$80
+        STA ADC00
+        JSR I86D8
+        LDX #$01
+        JSR I8696
+        CPY #$00
+        BNE I8690
+        STX A0D
+        STA A0E
+        LDA A01
+        AND #$DF
+        STA A01
+        JSR I8517
+        LDA #$EF
+        STA ADC00
+I8624   LDA ADC01
+        AND #$1F
+        STA A0A
+        LDA ADC00
+        AND #$1F
+        CMP A0A
+        BNE I8693
+        SEC 
+        ROR ADC00
+        BCS I8624
+        LDA A01
+        ORA #$20
+        STA A01
+        LDA #$0F            ;"o"
+        STA A05CA
+        LDA #$0B            ;"k"
+        STA A05CB
+        LDA A0B
+        JSR I94D0
+        STX A05CD
+        STY A05CE
+        STA A05CF
+        LDA #$2D
+        STA A05D0
+        LDA A0C
+        JSR I94D0
+        STX A05D1
+        STY A05D2
+        STA A05D3
+        LDA A0D
+        JSR I94D0
+        STX A05D5
+        STY A05D6
+        STA A05D7
+        LDA #$2D
+        STA A05D8
+        LDA A0E
+        JSR I94D0
+        STX A05D9
+        STY A05DA
+        STA A05DB
+        RTS 
+
+I868D   JMP I97C0
+
+I8690   JMP I97C4
+
+I8693   JMP I97FE
+
+I8696   LDA #$05
+        STA A0A
+I869A   LDA AD419
+        STA A12
+        LDA AD41A
+        STA A13
+        LDA A12
+        LDY #$01
+        CMP F86D0,X
+        BCC I86CB
+        INY 
+        CMP F86D2,X
+        BEQ I86B5
+        BCS I86CB
+I86B5   LDA A13
+        INY 
+        CMP F86D4,X
+        BCC I86CB
+        INY 
+        CMP F86D6,X
+        BEQ I86C5
+        BCS I86CB
+I86C5   DEC A0A
+        BNE I869A
+        LDY #$00
+I86CB   LDA A13
+        LDX A12
+        RTS 
+
+F86D0   .BYTE $50,$50
+F86D2   .BYTE $82,$82
+F86D4   .BYTE $50,$50
+F86D6   .BYTE $82,$82
+I86D8   LDX #$01
+I86DA   JSR I8517
+        DEX 
+        BNE I86DA
+        RTS 
+
+I86E1   LDX #$0B            ;serial port test
+I86E3   LDA F99D3,X         ;"serial port"
+        STA F05E4,X
+        DEX 
+        BPL I86E3
+        LDA A00
+        AND #$EF
+        STA A00
+        LDA ADC0D
+        LDA ADD00
+        AND #$C7
+        ORA #$18
+        STA ADD00
+        LDA ADC0D
+        AND #$10
+        BNE I8769
+        LDA ADD00
+        ASL 
+        BCC I876C
+        ASL 
+        BCS I876F
+        LDA ADD00
+        AND #$C7
+        ORA #$30
+        STA ADD00
+        LDA ADC0D
+        AND #$10
+        BEQ I8769
+        LDA ADD00
+        ASL 
+        BCS I876C
+        ASL 
+        BCS I876F
+        LDA ADD00
+        AND #$C7
+        ORA #$08
+        STA ADD00
+        LDA ADD00
+        ASL 
+        ASL 
+        BCS I876F
+        LDA ADD00
+        AND #$07
+        STA ADD00
+        LDA ADC0D
+        AND #$10
+        BNE I8769
+        LDA ADD00
+        ASL 
+        BCC I876C
+        ASL 
+        BCC I876F
+        LDA A00
+        ORA #$10
+        STA A00
+        LDA A01
+        AND #$EF
+        STA A01
+        LDA #$0F            ;"o"
+        STA A05F2
+        LDA #$0B            ;"k"
+        STA A05F3
+        RTS 
+
+I8769   JMP I9831
+
+I876C   JMP I9835
+
+I876F   JMP I9839
+
+I8772   LDX #$0B            ;user port test
+I8774   LDA F99DF,X         ;"user port"
+        STA F060C,X
+        DEX 
+        BPL I8774
+        LDA ADD00
+        AND #$E7
+        STA ADD00
+        NOP 
+        NOP 
+        LDA ADD00
+        AND #$04
+        BNE I8791
+        JMP I8825
+
+I8791   LDA ADD00
+        ORA #$08
+        STA ADD00
+        NOP 
+        NOP 
+        LDA ADD00
+        AND #$04
+        BEQ I87A5
+        JMP I8825
+
+I87A5   LDX #$00
+I87A7   STX ADD01
+        STX A0B
+        LDA ADD01
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        CMP A0B
+        BNE I8828
+        INX 
+        CPX #$10
+        BMI I87A7
+        LDX #$05
+I87C0   LDA ADD0D
+        LDA ADD01
+        NOP 
+        NOP 
+        LDA ADD0D
+        AND #$10
+        BEQ I882B
+        DEX 
+        BNE I87C0
+        LDA #$00
+        STA A25
+        LDA #$DC
+        STA A26
+        LDA #$00
+        STA A23
+        LDA #$DD
+        STA A24
+        JSR I8834
+        CPX #$00
+        BNE I882E
+        LDA ADC0E
+        AND #$BF
+        STA ADC0E
+        LDA ADD0E
+        ORA #$40
+        STA ADD0E
+        LDA #$00
+        STA A25
+        LDA #$DD
+        STA A26
+        LDA #$00
+        STA A23
+        LDA #$DC
+        STA A24
+        JSR I8834
+        CPX #$00
+        BNE I8831
+        LDA #$88
+        STA ADD0E
+        LDA #$C8
+        STA ADC0E
+        LDA #$0F            ;"o"
+        STA A061A
+        LDA #$0B            ;"k"
+        STA A061B
+        RTS 
+
+I8825   JMP I9853
+
+I8828   JMP I9857
+
+I882B   JMP I986E
+
+I882E   JMP I9872
+
+I8831   JMP I9876
+
+I8834   LDY #$04
+        LDA #$04
+        STA (P25),Y
+        INY 
+        LDA #$00
+        STA (P25),Y
+        LDY #$0E
+        LDA (P23),Y
+        AND #$80
+        ORA #$08
+        STA (P23),Y
+        LDA (P25),Y
+        AND #$80
+        ORA #$55
+        STA (P25),Y
+        DEY 
+        LDA (P23),Y
+        LDA (P25),Y
+        LDX #$03
+I8858   LDY #$0C
+        LDA F9956,X         ;memory testpattern
+        STA (P25),Y
+        LDA #$FF
+        STA A0A
+        INY 
+I8864   LDA (P25),Y
+        AND #$08
+        BNE I8872
+        DEC A0A
+        BNE I8864
+        LDX #$01
+        BNE I8895
+I8872   LDA #$FF
+        STA A0A
+I8876   LDA (P23),Y
+        AND #$08
+        BNE I8884
+        DEC A0A
+        BNE I8876
+        LDX #$02
+        BNE I8895
+I8884   DEY 
+        LDA (P23),Y
+        CMP F9956,X         ;memory testpattern
+        BEQ I8890
+        LDX #$03
+        BNE I8895
+I8890   DEX 
+        BPL I8858
+        LDX #$00
+I8895   LDY #$0E
+        LDA (P25),Y
+        AND #$80
+        ORA #$08
+        STA (P25),Y
+        RTS 
+
+I88A0   LDX #$07
+I88A2   LDA F99EB,X         ;"timer 1 a"
+        STA F065C,X
+        DEX 
+        BPL I88A2
+        LDA #$01
+        STA A0A
+I88AF   LDX A89AC
+        LDY A89AD
+        STX A16
+        STY A17
+        LDX A89AE
+        LDY A89AF
+        STX A18
+        STY A19
+        LDX #<$DC00
+        LDY #>$DC00         ;dc00
+        JSR I89BC
+        CPX #$00
+        BEQ I88D5
+        DEC A0A
+        BPL I88AF
+        JMP I89A0
+
+I88D5   LDA #$0F            ;"o"
+        STA A066A
+        LDA #$0B            ;"k"
+        STA A066B
+        RTS 
+
+I88E0   LDX #$07
+I88E2   LDA F99F3,X         ;"     b"
+        STA F0684,X
+        DEX 
+        BPL I88E2
+        LDA #$01
+        STA A0A
+I88EF   LDX A89B0
+        LDY A89B1
+        STX A16
+        STY A17
+        LDX A89B2
+        LDY A89B3
+        STX A18
+        STY A19
+        LDX #<$DC00
+        LDY #>$DC00         ;dc00
+        JSR I8A34
+        CPX #$00
+        BEQ I8915
+        DEC A0A
+        BPL I88EF
+        JMP I89A3
+
+I8915   LDA #$0F            ;"o"
+        STA A0692
+        LDA #$0B            ;"k"
+        STA A0693
+        RTS 
+
+I8920   LDX #$07            ;timer 2 a test
+I8922   LDA F99FB,X         ;"timer 2 a"
+        STA F06AC,X
+        DEX 
+        BPL I8922
+        LDA #$01
+        STA A0A
+I892F   LDX A89B4
+        LDY A89B5
+        STX A16
+        STY A17
+        LDX A89B6
+        LDY A89B7
+        STX A18
+        STY A19
+        LDX #<$DD00
+        LDY #>$DD00         ;dd00
+        JSR I89BC
+        CPX #$00
+        BEQ I8955
+        DEC A0A
+        BPL I892F
+        JMP I89A6
+
+I8955   LDA #$0F            ;"o"
+        STA A06BA
+        LDA #$0B            ;"k"
+        STA A06BB
+        RTS 
+
+I8960   LDX #$07            ;timer 2 b test
+I8962   LDA F9A03,X         ;"    b"
+        STA F06D4,X
+        DEX 
+        BPL I8962
+        LDA #$01
+        STA A0A
+I896F   LDX A89B8
+        LDY A89B9
+        STX A16
+        STY A17
+        LDX A89BA
+        LDY A89BB
+        STX A18
+        STY A19
+        LDX #<$DD00
+        LDY #>$DD00         ;dd00
+        JSR I8A34
+        CPX #$00
+        BEQ I8995
+        DEC A0A
+        BPL I896F
+        JMP I89A9
+
+I8995   LDA #$0F            ;"o"
+        STA A06E2
+        LDA #$0B            ;"k"
+        STA A06E3
+        RTS 
+
+I89A0   JMP I9893
+
+I89A3   JMP I9897
+
+I89A6   JMP I989B
+
+I89A9   JMP I989F
+
+A89AC   .BYTE $FF
+A89AD   .BYTE $00
+A89AE   .BYTE $10
+A89AF   .BYTE $00
+A89B0   .BYTE $FF
+A89B1   .BYTE $00
+A89B2   .BYTE $10
+A89B3   .BYTE $00
+A89B4   .BYTE $FF
+A89B5   .BYTE $00
+A89B6   .BYTE $10
+A89B7   .BYTE $00
+A89B8   .BYTE $FF
+A89B9   .BYTE $00
+A89BA   .BYTE $10
+A89BB   .BYTE $00
+
+I89BC   STX A04
+        STY A05
+        LDA #$00
+        STA A15
+        LDA #$34
+        LDY #$04
+        STA (P04),Y
+        LDA #$12
+        INY 
+        STA (P04),Y
+        LDY #$7F
+        LDA (P04),Y
+        LDY #$0E
+        LDA (P04),Y
+        AND #$EF
+        ORA #$09
+        STA (P04),Y
+        LDX #$00
+        LDY #$0D
+I89E1   LDA A05
+        CMP #$DD
+        BEQ I89ED
+        LDA ADC0D
+        SEC 
+        BCS I89F0
+I89ED   LDA ADD0D
+I89F0   AND #$01
+        BNE I8A21
+        SEC 
+        LDA A16
+        SBC #$01
+        STA A16
+        LDA A17
+        SBC #$00
+        STA A17
+        BCS I8A07
+        LDX #$32
+        BCC I8A29
+I8A07   LDA A15
+        CMP #$00
+        BNE I8A1E
+        SEC 
+        LDA A18
+        SBC #$01
+        STA A18
+        LDA A19
+        SBC #$00
+        STA A19
+        BCS I8A1E
+        INC A15
+I8A1E   JMP I89E1
+
+I8A21   LDA A15
+        CMP #$00
+        BNE I8A29
+        LDX #$31
+I8A29   LDY #$0E
+        LDA (P04),Y
+        AND #$E6
+        ORA #$08
+        STA (P04),Y
+        RTS 
+
+I8A34   STX A04
+        STY A05
+        LDA #$00
+        STA A15
+        LDA #$34
+        LDY #$06
+        STA (P04),Y
+        LDA #$12
+        INY 
+        STA (P04),Y
+        LDY #$0D
+        LDA (P04),Y
+        LDY #$0F
+        LDA (P04),Y
+        ORA #$09
+        STA (P04),Y
+        LDX #$00
+        LDY #$0D
+I8A57   LDA A05
+        CMP #$DD
+        BEQ I8A63
+        LDA ADC0D
+        SEC 
+        BCS I8A66
+I8A63   LDA ADD0D
+I8A66   AND #$02
+        BNE I8A97
+        SEC 
+        LDA A16
+        SBC #$01
+        STA A16
+        LDA A17
+        SBC #$00
+        STA A17
+        BCS I8A7D
+        LDX #$32
+        BCC I8A9F
+I8A7D   LDA A15
+        CMP #$00
+        BNE I8A94
+        SEC 
+        LDA A18
+        SBC #$01
+        STA A18
+        LDA A19
+        SBC #$00
+        STA A19
+        BCS I8A94
+        INC A15
+I8A94   JMP I8A57
+
+I8A97   LDA A15
+        CMP #$00
+        BNE I8A9F
+        LDX #$31
+I8A9F   LDY #$0F
+        LDA (P04),Y
+        AND #$E6
+        ORA #$08
+        STA (P04),Y
+        RTS 
+
+I8AAA   LDX #$08            ;interrupt test
+I8AAC   LDA F9A0B,X         ;"interrupt"
+        STA F06FC,X
+        DEX 
+        BPL I8AAC
+        
+        LDA #<J8D89
+        STA A0314
+        LDA #>J8D89
+        STA A0315
+        
+        LDA #<J8D9D
+        STA A0318
+        LDA #>J8D9D
+        STA A0319
+        CLI 
+        LDA #$10
+        STA ADC04
+        LDA #$00
+        STA ADC05
+        LDA #$FF
+        STA A1F
+        LDA #$81
+        STA ADC0D
+        STA A20
+        LDA ADC0D
+        LDA ADC0E
+        ORA #$09
+        STA ADC0E
+        JSR I948E           ;delay
+        LDA #$01
+        STA ADC0D
+        LDA ADC0E
+        AND #$EE
+        STA ADC0E
+        LDA A1F
+        BEQ I8B01
+        JMP I8CDD
+
+I8B01   LDA #$10
+        STA ADC06
+        LDA #$00
+        STA ADC07
+        LDA #$FF
+        STA A1F
+        LDA #$82
+        STA ADC0D
+        STA A20
+        LDA ADC0D
+        LDA ADC0F
+        ORA #$09
+        STA ADC0F
+        JSR I948E           ;delay
+        LDA #$02
+        STA ADC0D
+        LDA ADC0F
+        AND #$EE
+        STA ADC0F
+        LDA A1F
+        BEQ I8B38
+        JMP I8CE1
+
+I8B38   LDA #$FF
+        STA A1F
+        LDA #$84
+        STA ADC0D
+        STA A20
+        LDA ADC0D
+        LDX #$00
+        LDY #$DC
+        JSR I8D00
+        LDX #$0F
+I8B4F   STX A12
+        LDA #$64
+        JSR I949A           ;delay
+        LDA A1F
+        BEQ I8B5F
+        LDX A12
+        DEX 
+        BNE I8B4F
+I8B5F   LDA #$04
+        STA ADC0D
+        LDA A1F
+        BEQ I8B6B
+        JMP I8CE5
+
+I8B6B   LDA #$FF
+        STA A1F
+        LDA #$88
+        STA ADC0D
+        STA A20
+        LDA ADC0D
+        LDA #$FF
+        STA ADC0C
+        LDA ADC0E
+        AND #$E6
+        ORA #$01
+        STA ADC0E
+        LDX #$0A
+I8B8A   JSR I948E           ;delay
+        LDA A1F
+        BEQ I8B94
+        DEX 
+        BNE I8B8A
+I8B94   LDA #$08
+        STA ADC0D
+        LDA ADC0E
+        AND #$E6
+        STA ADC0E
+        LDA A1F
+        BEQ I8BA8
+        JMP I8CE9
+
+I8BA8   LDA ADD00
+        AND #$DF
+        STA ADD00
+        LDA A01
+        ORA #$10
+        STA A01
+        LDA #$FF
+        STA A1F
+        LDA #$90
+        STA ADC0D
+        STA A20
+        LDA ADC0D
+        LDA A01
+        AND #$EF
+        STA A01
+        NOP 
+        NOP 
+        LDA #$10
+        STA ADC0D
+        LDA A1F
+        BEQ I8BD8
+        JMP I8CED
+
+I8BD8   SEI 
+        LDA #$10
+        STA ADD04
+        LDA #$00
+        STA ADD05
+        LDA #$FF
+        STA A21
+        LDA #$81
+        STA ADD0D
+        STA A22
+        LDA ADD0D
+        LDA ADD0E
+        ORA #$09
+        STA ADD0E
+        JSR I948E           ;delay
+        LDA #$01
+        STA ADD0D
+        LDA ADD0E
+        AND #$E6
+        STA ADD0E
+        LDA A21
+        BEQ I8C10
+        JMP I8CF1
+
+I8C10   LDA #$10
+        STA ADD06
+        LDA #$00
+        STA ADD07
+        LDA #$FF
+        STA A21
+        LDA #$82
+        STA ADD0D
+        STA A22
+        LDA ADD0D
+        LDA ADD0F
+        ORA #$09
+        STA ADD0F
+        JSR I948E           ;delay
+        LDA #$02
+        STA ADD0D
+        LDA ADD0F
+        AND #$E6
+        STA ADD0F
+        LDA A21
+        BEQ I8C47
+        JMP I8CF4
+
+I8C47   LDA #$FF
+        STA A21
+        LDA #$84
+        STA ADD0D
+        STA A22
+        LDA ADD0D
+        LDX #$00
+        LDY #$DD
+        JSR I8D00
+        LDX #$0F
+I8C5E   STX A12
+        LDA #$64
+        JSR I949A           ;delay
+        LDA A21
+        BEQ I8C6E
+        LDX A12
+        DEX 
+        BNE I8C5E
+I8C6E   LDA #$04
+        STA ADD0D
+        LDA A21
+        BEQ I8C7A
+        JMP I8CF7
+
+I8C7A   LDA #$FF
+        STA A21
+        LDA #$88
+        STA ADD0D
+        STA A22
+        LDA ADD0D
+        LDA #$FF
+        STA ADC0C
+        LDA ADC0E
+        AND #$E6
+        ORA #$01
+        STA ADC0E
+        LDX #$0A
+I8C99   JSR I948E           ;delay
+        LDA A21
+        BEQ I8CA3
+        DEX 
+        BNE I8C99
+I8CA3   LDA #$08
+        STA ADD0D
+        LDA ADC0E
+        AND #$E6
+        ORA #$08
+        STA ADC0E
+        LDA A21
+        BNE I8CFA
+        LDA #$FF
+        STA A21
+        LDA #$90
+        STA ADD0D
+        STA A22
+        LDA ADD0D
+        LDA ADD01
+        NOP 
+        NOP 
+        LDA #$10
+        STA ADD0D
+        LDA A21
+        BNE I8CFD
+        LDA #$0F            ;"o"
+        STA A070A
+        LDA #$0B            ;"k"
+        STA A070B
+        RTS 
+
+I8CDD   SEI 
+        JMP I98D4
+
+I8CE1   SEI 
+        JMP I98D8
+
+I8CE5   SEI 
+        JMP I98E0
+
+I8CE9   SEI 
+        JMP I98DC
+
+I8CED   SEI 
+        JMP I98E4
+
+I8CF1   JMP I98EA
+
+I8CF4   JMP I98EE
+
+I8CF7   JMP I98F6
+
+I8CFA   JMP I98F2
+
+I8CFD   JMP I98FA
+
+I8D00   STX A04
+        STY A05
+        LDY #$0B
+        LDA (P04),Y
+        AND #$80
+        STA A1A
+        LDA (P04),Y
+        AND #$1F
+        STA A1B
+        DEY 
+        LDA (P04),Y
+        STA A1C
+        DEY 
+        LDA (P04),Y
+        STA A1D
+        DEY 
+        LDA (P04),Y
+        STA A1E
+        SED 
+        CLC 
+        LDA A1D
+        ADC #$01
+        CMP #$60
+        BMI I8D2F
+        SEC 
+        SBC #$60
+        SEC 
+I8D2F   STA A1D
+        LDA A1C
+        ADC #$00
+        CMP #$60
+        BMI I8D3D
+        SEC 
+        SBC #$60
+        SEC 
+I8D3D   STA A1C
+        LDA A1B
+        PHP 
+        CMP #$11
+        BNE I8D52
+        PLP 
+        PHP 
+        BCC I8D52
+        LDA A1A
+        EOR #$80
+        STA A1A
+        LDA A1B
+I8D52   PLP 
+        ADC #$00
+        STA A1B
+        CMP #$13
+        BMI I8D60
+        SEC 
+        SBC #$12
+        STA A1B
+I8D60   CLD 
+        LDY #$0F
+        LDA (P04),Y
+        ORA #$80
+        STA (P04),Y
+        LDY #$0B
+        LDA A1B
+        ORA A1A
+        STA (P04),Y
+        DEY 
+        LDA A1C
+        STA (P04),Y
+        DEY 
+        LDA A1D
+        STA (P04),Y
+        DEY 
+        LDA A1E
+        STA (P04),Y
+        LDY #$0F
+        LDA (P04),Y
+        AND #$7F
+        STA (P04),Y
+        RTS 
+
+J8D89   JSR I932D           ;update timer AM
+        LDA ADC0D
+        AND A20
+        CMP A20
+        BNE I8D97
+        INC A1F
+I8D97   PLA 
+        TAY 
+        PLA 
+        TAX 
+        PLA 
+        RTI 
+
+J8D9D   PHA 
+        TXA 
+        PHA 
+        TYA 
+        PHA 
+        JSR I932D           ;update timer AM
+        LDA ADD0D
+        AND A22
+        CMP A22
+        BNE I8DB0
+        INC A21
+I8DB0   PLA 
+        TAY 
+        PLA 
+        TAX 
+        PLA 
+        RTI 
+
+I8DB6   LDA #<J8DEB
+        STA A0314
+        LDA #>J8DEB
+        STA A0315
+        
+        LDA #$0A
+        STA A27
+        LDX #$00
+        STX A29
+        STX A2A
+        DEX 
+        STX A28
+        LDA #$CE
+        STA ADC04
+        LDA #$37
+        STA ADC05
+        LDA #$81
+        STA ADC0D
+        LDA ADC0D
+        LDA ADC0E
+        ORA #$11
+        AND #$D1
+        STA ADC0E
+        CLI 
+        RTS 
+
+J8DEB   LDA ADC0D
+        AND #$01
+        BNE I8DF5
+        JMP I8F7D
+
+I8DF5   DEC A27
+        BEQ I8DFC
+        JMP I8F7D
+
+I8DFC   LDA #$0A
+        STA A27
+        INC A28
+        LDA A28
+        CMP #$07
+        BCC I8E58
+        LDA #$00
+        STA A28
+        LDY A2A
+        LDA F8FAD,Y
+        AND #$FE
+        STA AD404
+        STA AD40B
+        STA AD412
+        INC A29
+        LDA A29
+        CMP #$03
+        BCC I8E58
+        LDA #$00
+        STA A29
+        INC A2A
+        LDA A2A
+        CMP #$04
+        BCC I8E58
+        LDX #$18
+        LDA #$00
+I8E34   STA FD400,X
+        DEX 
+        BPL I8E34
+        LDA #$01
+        STA ADC0D
+        LDA ADC0E
+        AND #$C0
+        ORA #$08
+        STA ADC0E
+        TSX 
+        LDA F0104,X
+        ORA #$04
+        STA F0104,X
+        PLA 
+        TAY 
+        PLA 
+        TAX 
+        PLA 
+        RTI 
+
+I8E58   LDX A28
+        LDY A2A
+        CPY #$03
+        BCC I8E63
+        JMP I8F23
+
+I8E63   LDA A29
+        BEQ I8E6F
+        CMP #$01
+        BEQ I8EAB
+        CMP #$02
+        BEQ I8EE7
+I8E6F   CPX #$00
+        BNE I8E82
+        LDA #$3E
+        STA AD405
+        LDA #$CA
+        STA AD406
+        LDA #$18
+        STA AD418
+I8E82   LDA F8FAD,Y
+        AND #$FE
+        STA AD404
+        LDA F8F83,X
+        STA AD401
+        LDA F8F8A,X
+        STA FD400
+        LDA F8FB1,Y
+        STA AD402
+        LDA F8FB4,Y
+        STA AD403
+        LDA F8FAD,Y
+        STA AD404
+        JMP I8F7D
+
+I8EAB   CPX #$00
+        BNE I8EBE
+        LDA #$3E
+        STA AD40C
+        LDA #$CA
+        STA AD40D
+        LDA #$1C
+        STA AD418
+I8EBE   LDA F8FAD,Y
+        AND #$FE
+        STA AD40B
+        LDA F8F91,X
+        STA AD408
+        LDA F8F98,X
+        STA AD407
+        LDA F8FB1,Y
+        STA AD409
+        LDA F8FB4,Y
+        STA AD40A
+        LDA F8FAD,Y
+        STA AD40B
+        JMP I8F7D
+
+I8EE7   CPX #$00
+        BNE I8EFA
+        LDA #$3E
+        STA AD413
+        LDA #$CA
+        STA AD414
+        LDA #$1F
+        STA AD418
+I8EFA   LDA F8FAD,Y
+        AND #$FE
+        STA AD412
+        LDA F8F9F,X
+        STA AD40F
+        LDA F8FA6,X
+        STA AD40E
+        LDA F8FB1,Y
+        STA AD410
+        LDA F8FB4,Y
+        STA AD411
+        LDA F8FAD,Y
+        STA AD412
+        JMP I8F7D
+
+I8F23   CPX #$00
+        BNE I8F7D
+        LDA #$2F
+        STA AD418
+        LDA #$F7
+        STA AD417
+        LDA #$28
+        STA AD416
+        LDA #$FF
+        STA AD415
+        LDA #$C4
+        STA AD406
+        STA AD40D
+        STA AD414
+        LDA #$00
+        STA FD400
+        STA AD407
+        STA AD40E
+        LDA #$09
+        STA AD401
+        STA AD408
+        STA AD40F
+        LDA A29
+        BEQ I8F68
+        CMP #$01
+        BEQ I8F70
+        CMP #$02
+        BEQ I8F78
+I8F68   LDA #$81
+        STA AD404
+        JMP I8F7D
+
+I8F70   LDA #$81
+        STA AD40B
+        JMP I8F7D
+
+I8F78   LDA #$81
+        STA AD412
+I8F7D   PLA 
+        TAY 
+        PLA 
+        TAX 
+        PLA 
+        RTI 
+
+F8F83   .BYTE $11,$15,$19,$22,$19,$15,$11
+F8F8A   .BYTE $25,$9A,$B1,$4B,$B1,$9A,$25
+F8F91   .BYTE $22,$2B,$33,$44,$33,$2B,$22
+F8F98   .BYTE $4B,$34,$61,$95,$61,$34,$4B
+F8F9F   .BYTE $44,$56,$66,$89,$66,$56,$44
+F8FA6   .BYTE $95,$69,$C2,$2B,$C2,$69,$95
+F8FAD   .BYTE $45,$11,$25,$81
+F8FB1   .BYTE $00,$00,$00
+F8FB4   .BYTE $08,$08,$08
+
+I8FB7   LDY #$06
+        JSR I946D           ;CLRSCRN+color
+        LDX #$00
+I8FBE   STX AD020
+        INX 
+        STX AD021
+        LDA #$64
+        JSR I949A           ;delay
+        CPX #$10
+        BCC I8FBE
+        LDA #$03
+        STA AD020
+        LDA #$01
+        STA AD021
+        LDX #$3E
+        LDA #$FF
+I8FDC   STA F0800,X
+        DEX 
+        BPL I8FDC
+        LDA #$FF
+        STA AD015
+        LDA #$30
+        STA AD001
+I8FEC   LDX #$07
+        LDA #$20
+I8FF0   STA F07F8,X
+        DEX 
+        BPL I8FF0
+I8FF6   LDA AD001
+        CLC 
+        ADC #$02
+        STA AD001
+        STA AD003
+        STA AD005
+        STA AD007
+        STA AD009
+        STA AD00B
+        STA AD00D
+        STA AD00F
+        LDA AD001
+        CMP #$32
+        BNE I9026
+        LDA #$FF
+        STA AD01B
+        JSR I905B
+        SEC 
+        BCS I8FEC
+I9026   CMP #$64
+        BNE I9030
+        JSR I9083
+        SEC 
+        BCS I8FEC
+I9030   CMP #$96
+        BNE I903F
+        LDA #$00
+        STA AD01B
+        JSR I90C5
+        SEC 
+        BCS I8FEC
+I903F   CMP #$C8
+        BNE I9049
+        JSR I90ED
+        SEC 
+        BCS I8FEC
+I9049   CMP #$FA
+        BCS I9055
+        LDA #$1E
+        JSR I949A           ;delay
+        SEC 
+        BCS I8FF6
+I9055   LDY #$06
+        JSR I946D           ;CLRSCRN+color
+        RTS 
+
+I905B   LDY #$01
+        JSR I946D           ;CLRSCRN+color
+        LDX #$00
+I9062   LDA #$A0
+        STA F0400,X
+        STA F0500,X
+        STA F0600,X
+        STA F0700,X
+        LDA #$06
+        STA FD800,X
+        STA FD900,X
+        STA FDA00,X
+        STA FDB00,X
+        INX 
+        INX 
+        BNE I9062
+        RTS 
+
+I9083   LDY #$01
+        JSR I946D           ;CLRSCRN+color
+        LDA #$00
+        STA A04
+        LDA #$04
+        STA A05
+        LDA #$00
+        STA A0F
+        LDA #$D8
+        STA A10
+        LDX #$0C
+I909A   LDY #$27
+I909C   LDA #$A0
+        STA (P04),Y
+        LDA #$06
+        STA (P0F),Y
+        DEY 
+        BPL I909C
+        CLC 
+        LDA A04
+        ADC #$50
+        STA A04
+        LDA A05
+        ADC #$00
+        STA A05
+        CLC 
+        LDA A0F
+        ADC #$50
+        STA A0F
+        LDA A10
+        ADC #$00
+        STA A10
+        DEX 
+        BPL I909A
+        RTS 
+
+I90C5   LDY #$01
+        JSR I946D           ;CLRSCRN+color
+        LDX #$00
+I90CC   LDA #$A0
+        STA F0400,X
+        STA F0500,X
+        STA F0600,X
+        STA F0700,X
+        TXA 
+        AND #$0F
+        STA FD800,X
+        STA FD900,X
+        STA FDA00,X
+        STA FDB00,X
+        INX 
+        BNE I90CC
+        RTS 
+
+I90ED   LDY #$01
+        JSR I946D           ;CLRSCRN+color
+        LDA #$00
+        STA A04
+        LDA #$04
+        STA A05
+        LDA #$00
+        STA A0F
+        LDA #$D8
+        STA A10
+        LDA #$18
+        STA A0A
+I9106   LDY #$00
+        LDX #$00
+I910A   LDA #$A0
+        STA (P04),Y
+        TXA 
+        STA (P0F),Y
+        INY 
+        LDA #$A0
+        STA (P04),Y
+        TXA 
+        STA (P0F),Y
+        INY 
+        INX 
+        CPX #$10
+        BCC I910A
+        CLC 
+        LDA A04
+        ADC #$28
+        STA A04
+        LDA A05
+        ADC #$00
+        STA A05
+        CLC 
+        LDA A0F
+        ADC #$28
+        STA A0F
+        LDA A10
+        ADC #$00
+        STA A10
+        DEC A0A
+        BPL I9106
+        RTS 
+
+I913E   JSR I917B
+        JSR I91B0
+        LDA ADD00
+        AND #$FC
+        ORA #$02
+        STA ADD00
+        LDA AD011
+        ORA #$20
+        STA AD011
+        LDA AD016
+        ORA #$10
+        STA AD016
+        LDA #$78
+        STA AD018
+        LDA #$00
+        STA AD021
+        JSR I91E6
+        LDY #$06
+        JSR I9462
+        LDA ADD00
+        AND #$FC
+        ORA #$03
+        STA ADD00
+        RTS 
+
+I917B   LDA #<$6000
+        STA A04
+        LDA #>$6000
+        STA A05
+        LDA #$C8
+        STA A06
+I9187   LDX #$00
+I9189   LDY #$00
+        TYA 
+        STA (P04),Y
+        INY 
+        LDA F926C,X
+I9192   STA (P04),Y
+        INY 
+        CPY #$08
+        BNE I9192
+        CLC 
+        LDA A04
+        ADC #$08
+        STA A04
+        LDA A05
+        ADC #$00
+        STA A05
+        INX 
+        CPX #$05
+        BNE I9189
+        DEC A06
+        BNE I9187
+        RTS 
+
+I91B0   LDA #<$5C00
+        STA A04
+        LDA #>$5C00
+        STA A05
+        JSR I91C7
+        LDA #<$D800
+        STA A04
+        LDA #>$D800
+        STA A05
+        JSR I91C7
+        RTS 
+
+I91C7   LDX #$19
+I91C9   LDY #$00
+I91CB   LDA F9271,Y
+        STA (P04),Y
+        INY 
+        CPY #$28
+        BNE I91CB
+        CLC 
+        LDA A04
+        ADC #$28
+        STA A04
+        LDA A05
+        ADC #$00
+        STA A05
+        DEX 
+        BNE I91C9
+        RTS 
+
+I91E6   LDX #$3E
+        LDA #$FF
+I91EA   STA F4800,X
+        DEX 
+        BPL I91EA
+        LDX #$07
+        LDA #$20
+I91F4   STA F5FF8,X
+        DEX 
+        BPL I91F4
+        LDX #$00
+        TXA 
+I91FD   STA FD000,X
+        INX 
+        INX 
+        CPX #$10
+        BNE I91FD
+        LDX #$00
+        LDA #$34
+I920A   STA AD001,X
+        CLC 
+        ADC #$19
+        INX 
+        INX 
+        CPX #$10
+        BNE I920A
+        LDX #$00
+        STX AD010
+        DEX 
+        STX AD015
+I921F   LDA FD000
+        CLC 
+        ADC #$02
+        STA FD000
+        STA AD002
+        STA AD004
+        STA AD006
+        STA AD008
+        STA AD00A
+        STA AD00C
+        STA AD00E
+        BCC I9244
+        LDA #$FF
+        STA AD010
+I9244   LDA #$14
+        JSR I949A           ;delay
+        LDA FD000
+        CMP #$58
+        BNE I921F
+        LDA AD010
+        BEQ I921F
+        LDA AD011
+        AND #$EF
+        STA AD011
+I925D   PHP 
+        PLA 
+        AND #$04
+        BEQ I925D
+        LDA AD011
+        ORA #$10
+        STA AD011
+        RTS 
+
+F926C   .BYTE $1B,$5B,$53,$5B,$5B
+
+F9271   .BYTE $44,$44,$46,$66,$66,$EE,$EE,$E3
+        .BYTE $33,$33,$55,$55,$5D,$DD,$DD,$77
+        .BYTE $77,$7A,$AA,$AA,$88,$88,$82,$22
+        .BYTE $22,$99,$99,$91,$11,$11,$FF,$FF
+        .BYTE $FC,$CC,$CC,$BB,$BB,$B0,$00,$00
+        
+I9299   LDA A01
+        ORA #$10
+        STA A01
+        LDA #$0F
+        STA AD418
+        LDA #$FF
+        STA AD40E
+        STA AD40F
+        LDA #$80
+        STA AD412
+        LDY #$06
+        JSR I946D           ;CLRSCRN+color
+        LDA #$20
+        LDX #$00
+I92BA   STA F0300,X
+        INX 
+        BNE I92BA
+        LDA #$1E
+        STA A0A
+I92C4   JSR I92E2
+        JSR I92FD
+        JSR I94AE
+        DEC A0A
+        BNE I92C4
+        LDY #$06
+        JSR I946D           ;CLRSCRN+color
+        LDA #$00
+        STA AD418
+        LDA A01
+        AND #$EF
+        STA A01
+        RTS 
+
+I92E2   LDA #$2A
+        LDX AD41B
+        STA F0400,X
+        LDX AD41B
+        STA F0500,X
+        LDX AD41B
+        STA F0600,X
+        LDX AD41B
+        STA F0700,X
+        RTS 
+
+I92FD   LDA #$C0
+        STA A0F
+        LDA #$07
+        STA A10
+        LDX #$18
+I9307   SEC 
+        LDA A0F
+        SBC #$28
+        STA A04
+        LDA A10
+        SBC #$00
+        STA A05
+        LDY #$27
+I9316   LDA (P04),Y
+        STA (P0F),Y
+        LDA #$20
+        STA (P04),Y
+        DEY 
+        BPL I9316
+        LDA A04
+        STA A0F
+        LDA A05
+        STA A10
+        DEX 
+        BPL I9307
+        RTS 
+
+I932D   LDA ADC0B           ;update timer AM
+        CLC 
+        ASL 
+        BCC I9341
+        LDA #$10
+        STA A075F
+        LDA #$0D
+        STA A0760
+        CLC 
+        BCC I934B
+I9341   LDA #$01
+        STA A075F
+        LDA #$0D
+        STA A0760
+I934B   LDA ADC0B
+        AND #$7F
+        LDY #$01
+        BNE I9386
+I9354   STA A0761
+        STX A0762
+        LDA #$3A
+        STA A0763
+        LDA ADC0A
+        LDY #$02
+        BNE I9386
+I9366   STA A0764
+        STX A0765
+        LDA #$3A
+        STA A0766
+        LDA ADC09
+        LDY #$03
+        BNE I9386
+I9378   STA A0767
+        STX A0768
+        LDA FDC08
+        SEC 
+        BCS I93BF           ;update timer PM
+
+I9384   LDY #$00            ;update timer
+I9386   PHA 
+        STY A13
+        LDY #$04
+        BNE I9395
+I938D   LDY A13
+        TAX 
+        PLA 
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+I9395   AND #$0F
+        CMP #$0A
+        BMI I93A0
+        SEC 
+        SBC #$09
+        BNE I93A2
+I93A0   ORA #$30
+I93A2   CPY #$01
+        BEQ I9354
+        CPY #$02
+        BEQ I9366
+        CPY #$03
+        BEQ I9378
+        CPY #$04
+        BEQ I938D
+        CPY #$05
+        BEQ I93E6
+        CPY #$06
+        BEQ I93F8
+        CPY #$07
+        BEQ I940A
+        RTS 
+
+I93BF   LDA ADD0B           ;update timer PM
+        CLC 
+        ASL 
+        BCC I93D3
+        LDA #$10
+        STA A0787
+        LDA #$0D
+        STA A0788
+        CLC 
+        BCC I93DD
+I93D3   LDA #$01
+        STA A0787
+        LDA #$0D
+        STA A0788
+I93DD   LDA ADD0B
+        AND #$7F
+        LDY #$05
+I93E4   BNE I9386
+I93E6   STA A0789
+        STX A078A
+        LDA #$3A
+        STA A078B
+        LDA ADD0A
+        LDY #$06
+        BNE I93E4
+I93F8   STA A078C
+        STX A078D
+        LDA #$3A
+        STA A078E
+        LDA ADD09
+        LDY #$07
+        BNE I93E4
+I940A   STA A078F
+        STX A0790
+        LDA FDD08
+        RTS 
+
+I9414   LDX #$00
+I9416   LDA #$20
+        STA F0400,X
+        STA F0500,X
+        STA F0600,X
+        STA F0700,X
+        LDA #$06
+        STA FD800,X
+        STA FD900,X
+        STA FDA00,X
+        STA FDB00,X
+        INX 
+        BNE I9416
+        LDX #$18
+I9437   LDA F995A,X         ;"c-64 diagnostic rev 4.1.0"
+        STA F0409,X
+        DEX 
+        BPL I9437
+        LDX #$04
+I9442   LDA F9973,X         ;"count"
+        STA F07D7,X
+        DEX 
+        BPL I9442
+        LDA A02
+        JSR I9384           ;update timer
+        STA A07DF
+        STX A07E0
+        LDA A03
+        JSR I9384           ;update timer
+        STA A07DD
+        STX A07DE
+        RTS 
+
+I9462   LDX #$2E
+I9464   LDA F991F,X
+        STA FD000,X
+        DEX 
+        BPL I9464
+I946D   LDX #$00            ;CLRSCRN+color
+I946F   LDA #$20
+        STA F0400,X
+        STA F0500,X
+        STA F0600,X
+        STA F0700,X
+        TYA 
+        STA FD800,X
+        STA FD900,X
+        STA FDA00,X
+        STA FDB00,X
+        INX 
+        BNE I946F
+        RTS 
+
+I948E   PHA                 ;delay
+        TXA 
+        PHA 
+        LDX #$00
+I9493   DEX 
+        BNE I9493
+        PLA 
+        TAX 
+        PLA 
+        RTS 
+
+I949A   CMP #$00            ;delay
+        BEQ I94AD
+        TAY 
+        TXA 
+        PHA 
+        TYA 
+        TAX 
+I94A3   LDY #$FF
+I94A5   DEY 
+        BNE I94A5
+        DEX 
+        BNE I94A3
+        PLA 
+        TAX 
+I94AD   RTS 
+
+I94AE   LDA #$7F
+        BIT AFFA9
+        STA ADC05
+        LDA #$FF
+        STA ADC04
+        LDA #$7F
+        STA ADC0D
+        LDA ADC0E
+        ORA #$09
+        STA ADC0E
+I94C8   LDA ADC0D
+        AND #$01
+        BEQ I94C8
+        RTS 
+
+I94D0   LDX #$00
+        LDY #$00
+I94D4   SEC 
+        SBC #$64
+        BCC I94DC
+        INX 
+        BCS I94D4
+I94DC   CLC 
+        ADC #$64
+I94DF   SEC 
+        SBC #$0A
+        BCC I94E7
+        INY 
+        BCS I94DF
+I94E7   CLC 
+        ADC #$0A
+        PHA 
+        TXA 
+        ORA #$30
+        TAX 
+        TYA 
+        ORA #$30
+        TAY 
+        PLA 
+        ORA #$30
+        RTS 
+
+I94F7   TAX 
+        LDA #$30
+        STA A0469
+        STA A046A
+        TYA 
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        CMP #$0A
+        BPL I950D
+        ORA #$30
+I950D   STA A046B
+        TYA 
+        AND #$0F
+        CMP #$0A
+        BPL I9519
+        ORA #$30
+I9519   STA A046C
+        TXA 
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        CMP #$0A
+        BPL I9529
+        ORA #$30
+I9529   STA A046E
+        TXA 
+        AND #$0F
+        CMP #$0A
+        BPL I9535
+        ORA #$30
+I9535   STA A046F
+        LDA #$2D
+        STA A0470
+        LDA F0000,Y
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        CMP #$0A
+        BPL I954C
+        ORA #$30
+I954C   STA A0471
+        LDA F0000,Y
+        AND #$0F
+        CMP #$0A
+        BPL I955A
+        ORA #$30
+I955A   STA A0472
+        LDA #$02
+        STA AD862
+        STA AD863
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A0462           ;zero page status
+        STX A0463
+        JMP I9916           ;Error. red border
+
+I9572   TAX                 ;stack page memory error
+        LDA #$30
+        STA A0491
+        LDA #$31
+        STA A0492
+        TYA 
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        CMP #$0A
+        BPL I958A
+        ORA #$30
+I958A   STA A0493
+        TYA 
+        AND #$0F
+        CMP #$0A
+        BPL I9596
+        ORA #$30
+I9596   STA A0494
+        TXA 
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        CMP #$0A
+        BPL I95A6
+        ORA #$30
+I95A6   STA A0496
+        TXA 
+        AND #$0F
+        CMP #$0A
+        BPL I95B2
+        ORA #$30
+I95B2   STA A0497
+        LDA #$2D
+        STA A0498
+        LDA F0100,Y
+        LSR 
+        LSR 
+        LSR 
+        LSR 
+        AND #$0F
+        CMP #$0A
+        BPL I95C9
+        ORA #$30
+I95C9   STA A0499
+        LDA F0100,Y
+        AND #$0F
+        CMP #$0A
+        BPL I95D7
+        ORA #$30
+I95D7   STA A049A
+        LDA #$02
+        STA AD88A
+        STA AD88B
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A048A           ;stack page test status
+        STX A048B
+        JMP I9916           ;Error. red border
+
+
+I95EF   STA A0B             ;called as $95ef
+        LDA (P0F),Y
+        STA A0D
+        TYA 
+        STA A0F
+        JSR I9414
+        LDX #$09
+I95FD   LDA F9978,X         ;"zero page"
+        STA F0454,X
+        DEX 
+        BPL I95FD
+        LDX #$09
+I9608   LDA F9982,X
+        STA F047C,X
+        DEX 
+        BPL I9608
+        LDX #$08
+I9613   LDA F9994,X         ;"ram test1"
+        STA F04CC,X
+        DEX 
+        BPL I9613
+        LDA A10
+        JSR I9384           ;update timer
+        STA A04E1
+        STX A04E2
+        LDA A0F
+        JSR I9384           ;update timer
+        STA A04E3
+        STX A04E4
+        LDA A0B
+        JSR I9384           ;update timer
+        STA A04E6
+        STX A04E7
+        LDA #$2D
+        STA A04E8
+        LDA A0D
+        JSR I9384           ;update timer
+        STA A04E9
+        STX A04EA
+        LDA #$0F            ;"o"
+        STA A0462           ;ram test 1 status
+        STA A048A           ;pla test status
+        LDA #$0B            ;"k"
+        STA A0463
+        STA A048B
+        LDA #$02
+        STA AD8DA
+        STA AD8DB
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A04DA           ;color ram status
+        STX A04DB
+        JMP I9916           ;Error. red border
+
+;----------------------------------------- 
+.logical (*-cartstart+$1000) 
+E2672   STA A0B
+        LDA (P0F),Y
+        STA A0D
+        TYA 
+        STA A0F
+        LDA A10
+        JSR I9384           ;update timer
+        STA A04B9
+        STX A04BA
+        LDA A0F
+        JSR I9384           ;update timer
+        STA A04BB
+        STX A04BC
+        LDA A0B
+        JSR I9384           ;update timer
+        STA A04BE
+        STX A04BF
+        LDA #$2D
+        STA A04C0
+        LDA A0D
+        JSR I9384           ;update timer
+        STA A04C1
+        STX A04C2
+        LDA #$02
+        STA AD8B2
+        STA AD8B3
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A04B2           ;ram test 2 status
+        STX A04B3
+        JMP E2916
+
+E26C1   LDA A0A
+        STA A048E
+        LDA #$02
+        STA AD88A
+        STA AD88B
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A048A           ;pla test status
+        STX A048B
+        JMP E2916
+.here
+;----------------------------------------- 
+
+I96DB   STX A0D
+        TYA 
+        STA A04
+        LDA A05
+        JSR I9384           ;update timer
+        STA A04E1
+        STX A04E2
+        LDA A04
+        JSR I9384           ;update timer
+        STA A04E3
+        STX A04E4
+        LDA A0D
+        JSR I9384           ;update timer
+        STX A04E6
+        LDA #$2D
+        STA A04E7
+        LDA A0B
+        JSR I9384           ;update timer
+        STX A04E8
+        LDA #$02
+        STA AD8DA
+        STA AD8DB
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A04DA           ;color ram status
+        STX A04DB
+        JMP I9916           ;Error. red border
+
+;----------------------------------------- 
+.logical (*-cartstart+$1000)
+E2720   INX 
+        TXA 
+        ORA #$30
+        STA A0506
+        LDA #$02
+        STA AD902
+        STA AD903
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A0502           ;rom check status
+        STX A0503
+        JMP E2916
+.here
+;----------------------------------------- 
+
+I973C   LDA #$31
+        BNE I9746
+I9740   LDA #$32
+        BNE I9746
+I9744   LDA #$33
+I9746   STA A0556
+        LDA #$02
+        STA AD952
+        STA AD953
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A0552
+        STX A0553
+        JMP I9916           ;Error. red border
+
+I975E   STY A0580
+        INC A0580
+        STY A13
+        LDA ADC02,Y
+        JSR I9384           ;update timer
+        STA A0582
+        STX A0583
+        LDA #$2D
+        STA A0584
+        LDY A13
+        LDA ADC00,Y
+        JSR I9384           ;update timer
+        STA A0585
+        STX A0586
+        LDA #$31
+        BNE I97A8           ;error
+
+I9789   LDA ADC00
+        JSR I9384           ;update timer
+        STA A0580
+        STX A0581
+        LDA #$2D
+        STA A0582
+        LDA ADC01
+        JSR I9384           ;update timer
+        STA A0583
+        STX A0584
+        LDA #$32
+I97A8   STA A057E           ;error
+        LDA #$02
+        STA FD97A
+        STA AD97B
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A057A
+        STX A057B
+        JMP I9916           ;Error. red border
+
+I97C0   LDA #$31
+        BNE I97C6
+I97C4   LDA #$32
+I97C6   STA A05D0
+        LDA #$18
+        LDX A12
+        CPY #$03
+        BMI I97DA
+        TYA 
+        SEC 
+        SBC #$02
+        TAY 
+        LDA #$19
+        LDX A13
+I97DA   STA A05D2
+        LDA #$08
+        CPY #$01
+        BNE I97E5
+        LDA #$0C
+I97E5   STA A05D3
+        LDA #$3A
+        STA A05D4
+        TXA 
+        JSR I94D0
+        STX A05D5
+        STY A05D6
+        STA A05D7
+        LDA #$31
+        BNE I9819
+I97FE   JSR I9384           ;update timer
+        STA A05D0
+        STX A05D1
+        LDA #$2D
+        STA A05D2
+        LDA A0B
+        JSR I9384           ;update timer
+        STA A05D3
+        STX A05D4
+        LDA #$32
+I9819   STA A05CE
+        LDA #$02
+        STA AD9CA
+        STA AD9CB
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A05CA
+        STX A05CB
+        JMP I9916           ;Error. red border
+
+I9831   LDA #$31
+        BNE I983B
+I9835   LDA #$32
+        BNE I983B
+I9839   LDA #$33
+I983B   STA A05F6
+        LDA #$02
+        STA AD9F2
+        STA AD9F3
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A05F2
+        STX A05F3
+        JMP I9916           ;Error. red border
+
+I9853   LDA #$31            ;"1"
+        BNE I987B
+I9857   JSR I9384           ;update timer
+        STX A0622
+        LDA #$2D
+        STA A0621
+        LDA A0B
+        JSR I9384           ;update timer
+        STX A0620
+        LDA #$32            ;"2"
+        BNE I987B
+I986E   LDA #$33            ;"3"
+        BNE I987B
+I9872   LDA #$34            ;"4"
+        BNE I9878
+I9876   LDA #$35            ;"5"
+I9878   STX A0620
+I987B   STA A061E
+        LDA #$02
+        STA ADA1A
+        STA ADA1B
+        LDA #$0E            ;"n"
+        LDX #$07            ;"g"
+        STA A061A
+        STX A061B
+        JMP I9916           ;Error. red border
+
+
+
+I9893   LDY #$00
+        BEQ I98A1
+I9897   LDY #$28
+        BNE I98A1
+I989B   LDY #$50
+        BNE I98A1
+I989F   LDY #$78
+I98A1   CLC 
+        LDA #$00
+        ADC #$6A
+        STA A04
+        LDA #$04
+        ADC #$02
+        STA A05
+        CLC 
+        LDA #$00
+        ADC #$6A
+        STA A0F
+        LDA #$D8
+        ADC #$02
+        STA A10
+        LDA #$02
+        STA (P0F),Y
+        LDA #$0E
+        STA (P04),Y
+        INY 
+        LDA #$02
+        STA (P0F),Y
+        LDA #$07
+        STA (P04),Y
+        INY 
+        INY 
+        TXA 
+        STA (P04),Y
+        JMP I9916           ;Error. red border
+
+I98D4   LDA #$31            ;"1"
+        BNE I98E6
+I98D8   LDA #$32            ;"2"
+        BNE I98E6
+I98DC   LDA #$33            ;"3"
+        BNE I98E6
+I98E0   LDA #$34            ;"4"
+        BNE I98E6
+I98E4   LDA #$35            ;"5"
+I98E6   LDX #$31            ;"1"
+        BNE I98FE
+        
+I98EA   LDA #$31            ;"1"
+        BNE I98FC
+I98EE   LDA #$32            ;"2"
+        BNE I98FC
+I98F2   LDA #$33            ;"3"
+        BNE I98FC
+I98F6   LDA #$34            ;"4"
+        BNE I98FC
+I98FA   LDA #$35            ;"5"
+I98FC   LDX #$32            ;"2"
+
+I98FE   STA A070E
+        STX A0710
+        LDA #$02
+        STA ADB0A
+        STA ADB0B
+        LDA #$0E            ;"n"        ;n
+        LDX #$07            ;"g"        ;g
+        STA A070A
+        STX A070B
+
+;----------------------------------------- 
+.logical (*-cartstart+$1000)
+E2916
+.here
+;-----------------------------------------        
+I9916   LDA #$02            ;Error. red border
+        STA AD020
+I991B   SEC                 ;replace with RTS to continue tests on fail
+        BCS I991B           ;loop forever
+        RTS 
+
+F991F   .BYTE $20,$50,$48,$50,$70,$50,$98,$50
+        .BYTE $C0,$50,$E8,$50,$10,$50,$38,$50
+        .BYTE $C0,$1B,$00,$00,$00,$00,$08,$00
+        .BYTE $14,$00,$00,$00,$00,$00,$00,$00
+        .BYTE $03,$01,$00,$00,$00,$00,$00,$00
+        .BYTE $02,$03,$04,$05,$06,$07,$0C
+        
+F994E   .BYTE $00,$59,$49,$01
+F9952   .BYTE $00,$59,$49,$81
+F9956   .BYTE $00,$55,$AA,$FF                   ;memory testpattern
+
+.enc screen
+F995A   .text "c-64 diagnostic rev 4.1.0"
+F9973   .text "count"
+F9978   .text "zero  page"
+F9982   .text "stack page"
+;----------------------------------------- 
+.logical (*-cartstart+$1000)
+F298C   .text "pla test"
+.here
+;----------------------------------------- 
+F9994   .text "ram test1"
+;----------------------------------------- 
+.logical (*-cartstart+$1000)
+F299D   .text "ram test2"
+.here
+;----------------------------------------- 
+F99A6   .text "color ram"
+F99AF   .text "rom check"
+F99B8   .text "cassete"
+F99BF   .text "key port"
+F99C7   .text "control port"
+F99D3   .text "serial  port"
+F99DF   .text "user    port"
+F99EB   .text "timer1 a"
+F99F3   .text "       b"
+F99FB   .text "timer2 a"
+F9A03   .text "       b"
+F9A0B   .text "interrupt"
+        .text "sound test"
+.enc none
+
+.fill $a000-*,$ff
+
+
